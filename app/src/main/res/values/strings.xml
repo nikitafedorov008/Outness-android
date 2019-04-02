@@ -9,7 +9,11 @@
     <string name="comments">Comments</string>
     <string name="categories">Category</string>
     <string name="archive">Archive</string>
-    <string name="about">About US</string>
+    <string name="who">Who</string>
+    <string name="where">Where</string>
+    <string name="what">What</string>
+    <string name="how">How</string>
+    <string name="about">About Us</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="written_by">Written by :</string>
     <string name="on_date">on date :</string>

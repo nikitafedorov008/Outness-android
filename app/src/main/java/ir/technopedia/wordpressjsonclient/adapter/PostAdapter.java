@@ -16,9 +16,6 @@ import ir.technopedia.wordpressjsonclient.model.PostModel;
 import ir.technopedia.wordpressjsonclient.R;
 import ir.technopedia.wordpressjsonclient.util.Font;
 
-/**
- * Created by TheLoneWolf on 9/3/2016.
- */
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.DataObjectHolder> {
 
     static Font font;

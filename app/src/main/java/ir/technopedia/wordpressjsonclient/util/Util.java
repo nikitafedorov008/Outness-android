@@ -12,9 +12,6 @@ import java.util.regex.Pattern;
 
 import ir.technopedia.wordpressjsonclient.R;
 
-/**
- * Created by user1 on 10/7/2016.
- */
 
 public class Util {
 

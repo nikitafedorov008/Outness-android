@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -43,6 +44,7 @@ import ir.technopedia.wordpressjsonclient.util.Util;
 public class MainActivity extends AppCompatActivity
         implements SearchView.OnQueryTextListener {
 
+    Typeface typeface;
     private TextView toolBarLogo;
     NavigationView navigationView;
     DrawerLayout drawer;
@@ -84,6 +86,8 @@ public class MainActivity extends AppCompatActivity
         navAdapter = new NavExpandableListAdapter(this, navListHeader, navListChild);
         navMenuList.setAdapter(navAdapter);
 
+
+        //TypefaceUtil.overrideFont(getApplicationContext(), "", "font/GoogleSans-Regular.ttf");
         /*TextView title = (TextView) findViewById(R.id.title);
         TextView comentCount = (TextView) findViewById(R.id.comment_count);
         font.setFont(getApplicationContext(),title);
@@ -99,13 +103,23 @@ public class MainActivity extends AppCompatActivity
                     navListHeader.get(groupPosition).toggle();
                     return false;
                 } else if (groupPosition == 2) {
-                    selectedCat = -1;
-                    loadPostFragment(selectedCat, "");
-                } else if (groupPosition == 3) {
+                    selectedCat = groupPosition;
+                    loadPostFragment(selectedCat, "кто");
+                }else if (groupPosition == 3) {
+                    selectedCat = groupPosition;
+                    loadPostFragment(selectedCat, "где");
+                }else if (groupPosition == 4) {
+                    selectedCat = groupPosition;
+                    loadPostFragment(selectedCat, "что");
+                }else if (groupPosition == 5) {
+                    selectedCat = groupPosition;
+                    loadPostFragment(selectedCat, "как");
+                } else if (groupPosition == 6) {
                     searchItem.setVisible(false);
                     isPostPage = false;
                     fragmentManager.beginTransaction().replace(R.id.frame, new AboutFragment()).addToBackStack(null).commit();
                 }
+
                 onBackPressed();
                 return false;
             }
@@ -178,8 +192,20 @@ public class MainActivity extends AppCompatActivity
         getCategories();
         navListChild.put(navListHeader.get(1), categorylist);
         item = new ExpandedMenuModel();
-        item.iconName = getResources().getString(R.string.archive);
-        item.iconImg = R.drawable.ic_nav_archive;
+        item.iconName = getResources().getString(R.string.who);
+        item.iconImg = R.drawable.ic_who;
+        navListHeader.add(item);
+        item = new ExpandedMenuModel();
+        item.iconName = getResources().getString(R.string.where);
+        item.iconImg = R.drawable.ic_where;
+        navListHeader.add(item);
+        item = new ExpandedMenuModel();
+        item.iconName = getResources().getString(R.string.what);
+        item.iconImg = R.drawable.ic_what;
+        navListHeader.add(item);
+        item = new ExpandedMenuModel();
+        item.iconName = getResources().getString(R.string.how);
+        item.iconImg = R.drawable.ic_how;
         navListHeader.add(item);
         item = new ExpandedMenuModel();
         item.iconName = getResources().getString(R.string.about);

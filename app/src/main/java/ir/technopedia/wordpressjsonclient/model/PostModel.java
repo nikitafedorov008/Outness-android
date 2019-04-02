@@ -9,9 +9,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by user1 on 10/5/2016.
- */
 
 public class PostModel extends SugarRecord {
     public int id, comment_count;
